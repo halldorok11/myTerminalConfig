@@ -1,5 +1,5 @@
 # Working Directory
-PS1='\[\033[1;31m\][\u@\h][\W]$\[\033[0m\] '
+PS1='\[\033[1;30m\][\u@\h][\W]$\[\033[0m\] '
 
 #Color output
 export CLICOLOR=1
