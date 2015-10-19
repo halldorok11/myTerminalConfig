@@ -446,7 +446,7 @@ set number
 map <silent> <cr> :noh<cr>
 
 " fzf fuzzy search
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 map <leader>fs :FZF<cr>
 
 " when searching, this makes the search results always appear in the middle of the screen
