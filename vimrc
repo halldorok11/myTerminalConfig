@@ -444,7 +444,7 @@ noremap ; l
 noremap l k
 noremap k j
 noremap j h
-noremap h :
+" noremap h :
 
 
 " line numbers
