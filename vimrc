@@ -162,7 +162,7 @@ if has("gui_running")
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+" set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -439,6 +439,14 @@ endfunction
 "map <left> <nop>
 "map <right> <nop>
 
+" Remap the default movement keys
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+noremap h :
+
+
 " line numbers
 set number
 
@@ -472,7 +480,7 @@ set nobackup
 set noswapfile
 
 " remap : to ; so i don't have to abuse the shift key anymore
-nnoremap ; :
+" nnoremap ; :
 
 " use jj for exiting insert mode instead of esc
 :imap jj <Esc>
@@ -480,11 +488,15 @@ nnoremap ; :
 " map <leader> to the space key
 map <SPACE> <leader>
 
-" always give a 15 line space from the cursor to the bottom and top of window
-set so=15
+" always give a margin from the cursor to the bottom and top of window
+set so=5
 
 " just for a little extra margin on the left
 :set foldcolumn=2
 
 " guaranteed 256 color scheme
 :set t_Co=256
+
+" Better explorer
+let g:netrw_liststyle=3
+map <leader>e :E<cr>
