@@ -147,7 +147,7 @@ set tm=500
 syntax enable 
 
 try
-    colorscheme hybrid_material
+    colorscheme sourcerer
 catch
 endtry
 
@@ -212,8 +212,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+" map j gj
+" map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 "map <space> /
@@ -223,10 +223,10 @@ map k gk
 " map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" map <C-j> <C-W>j
+" map <C-k> <C-W>k
+" map <C-h> <C-W>h
+" map <C-l> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -444,7 +444,7 @@ noremap ; l
 noremap l k
 noremap k j
 noremap j h
-" noremap h :
+noremap h ;
 
 
 " line numbers
@@ -458,12 +458,12 @@ set rtp+=~/.fzf
 map <leader>fs :FZF<cr>
 
 " when searching, this makes the search results always appear in the middle of the screen
-:nnoremap n nzz
-:nnoremap N Nzz
-:nnoremap * *zz
-:nnoremap # #zz
-:nnoremap g* g*zz
-:nnoremap g# g#zz
+" :nnoremap n nzz
+" :nnoremap N Nzz
+" :nnoremap * *zz
+" :nnoremap # #zz
+" :nnoremap g* g*zz
+" :nnoremap g# g#zz
 
 " cycle through buffers
 :nnoremap <C-b> :bnext<CR>
@@ -500,3 +500,26 @@ set so=5
 " Better explorer
 let g:netrw_liststyle=3
 map <leader>e :E<cr>
+
+" Highlight current line
+set cursorline
+hi cursorline ctermfg=NONE
+
+" quickly test current file
+nmap <leader>p :!phpunit %<CR>
+
+" quick linting current file with php
+nmap <leader>lp :!php -l %<CR>
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
+map <C-;> <C-W>;
+
+""" PLUGINS """
+call plug#begin()
+
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
