@@ -277,7 +277,7 @@ map <leader>ba :bufdo bd<cr>
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ %P\ 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -454,7 +454,6 @@ set number
 map <silent> <cr> :noh<cr>
 
 " fzf fuzzy search
-set rtp+=~/.fzf
 map <leader>fs :FZF<cr>
 
 " when searching, this makes the search results always appear in the middle of the screen
@@ -503,7 +502,7 @@ map <leader>e :E<cr>
 
 " Highlight current line
 set cursorline
-hi cursorline ctermfg=NONE
+:nnoremap <leader>c :hi cursorline ctermfg=NONE<CR>
 
 " quickly test current file
 nmap <leader>p :!phpunit %<CR>
@@ -521,5 +520,6 @@ map <C-;> <C-W>;
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
